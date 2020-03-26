@@ -1,0 +1,57 @@
+@media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+.container{
+  margin-top: 50px;
+}
+
+body{
+  background-color: black;
+  color: silver;
+}
+
+#case_box{
+  width: 100%;
+  padding: 20px;
+  margin: 30px auto;
+  box-sizing:border-box; 
+  border:2px solid silver; 
+}
+
+#result_box{
+  width: 80%;
+  padding: 20px;
+  margin: 30px auto;
+  box-sizing:border-box; 
+  border:2px solid red; 
+}
+
+label.case_radio{
+  display: block;
+}
+
+.annotation{
+  text-align: right;
+  font-size: small;
+  line-height: 2em;
+}
+
+
+#a1, #a2, #a3, #a4{
+  background-color: lightyellow;
+}
+
+#result_box div{
+  margin: 0.5em auto;
+  color: white;
+  text-align: center;
+}
+
+#num1, #num2, #num3{
+  color: red;
+  font-size: xx-large;
+  margin: 0 0.2em;
+}

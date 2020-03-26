@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>PCR検査とベイズ推定</title>
+  </head>
+  <body onload="cal()">
+    <div class="container">
+      <h1>PCR検査とベイズ推定</h1>
+
+      <form name="pcr_form">
+        <div id="case_box">
+          <label class="case_radio"><input checked type="radio" name="case" value="case1" onclick="case1()"> ケース1 : 1万人にPCR検査を行い、うち100人が感染者の場合</label>
+          <label class="case_radio"><input type="radio" name="case" value="case2" onclick="case2()"> ケース2 : 東京都民1400万人にPCR検査を行い、うち10万人が感染者の場合</label>
+          <label class="case_radio"><input type="radio" name="case" value="case3" onclick="case3()"> ケース3 : ケース2で、感度、特異度ともに99%になった場合</label>
+          <label class="case_radio"><input type="radio" name="case" value="case3" onclick="case4()"> ケース4 : 1000人にPCR検査を行い、うち500人が感染者の場合</label>
+        </div>
+
+        <div class="form-group row">
+          <label for="pcr_num" class="col-sm-3 col-form-label">PCR検査全体数（人）</label>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="total" name="total" value="10000" min="0" onchange="cal()">
+          </div>
+          <label for="infection_num" class="col-sm-3 col-form-label">感染者数（人）</label>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="infection" name="infection" value="100" min="0" onchange="cal()">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pcr_num" class="col-sm-3 col-form-label">PCR感度（％）</label>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="sensitivity" name="sensitivity" value="70" min="50" max="100" step="0.1" onchange="cal()">
+          </div>
+          <label for="pcr_num" class="col-sm-3 col-form-label">PCR特異度（％）</label>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="specificity" name="specificity" value="95" min="90" max="100" step="0.1" onchange="cal()">
+          </div>
+        </div>
+
+        <p class="annotation">感度：真の感染者を正しく陽性と判定できる確率<br>特異度：非感染者を正しく陰性と判定できる確率</p>
+
+        <div class="form-group row">
+          <label for="pcr_num" class="col-sm-5 offset-sm-2 col-form-label">真陽性：感染している かつ 陽性</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="a1" name="a1" readonly>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pcr_num" class="col-sm-5 offset-sm-2 col-form-label">偽陽性：感染している でも 陰性</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="a2" name="a2" readonly>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pcr_num" class="col-sm-5 offset-sm-2 col-form-label">真陰性：感染していない かつ 陰性</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="a3" name="a3" readonly>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pcr_num" class="col-sm-5 offset-sm-2 col-form-label">偽陽性：感染していない でも 陽性</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="a4" name="a4" readonly>
+          </div>
+        </div>
+    </form>
+      <div id="result_box">
+        <div>検査結果が陽性となる人は<span id="num1"></span>人いますが、</div>
+        <div>そのうち本当に感染しているのは<span id="num2"></span>人です。</div>
+        <div>よって、陽性が正解である確率は<span id="num3"></span>％です。</div>
+      </div>
+    </div>
+    
+    <script src="cal.js"></script>
+  </body>
+</html>
