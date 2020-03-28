@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <title>PCR検査とベイズ推定</title>
+    <title>PCR検査確率シミュレーション</title>
   </head>
   <body onload="cal()">
     <div class="container">
-      <h1>PCR検査とベイズ推定</h1>
+      <h1>PCR検査確率シミュレーション</h1>
 
       <form name="pcr_form">
         <div id="case_box">
@@ -40,7 +40,7 @@
           </div>
           <label for="pcr_num" class="col-sm-3 col-form-label">PCR特異度（％）</label>
           <div class="col-sm-3">
-            <input type="number" class="form-control" id="specificity" name="specificity" value="95" min="90" max="100" step="0.1" onchange="cal()">
+            <input type="number" class="form-control" id="specificity" name="specificity" value="99" min="90" max="100" step="0.1" onchange="cal()">
           </div>
         </div>
 

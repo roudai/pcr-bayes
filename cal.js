@@ -2,7 +2,7 @@ function case1(){
   document.pcr_form.total.value = 10000
   document.pcr_form.infection.value = 100
   document.pcr_form.sensitivity.value = 70
-  document.pcr_form.specificity.value = 95
+  document.pcr_form.specificity.value = 99
   cal()
 }
 
@@ -10,7 +10,7 @@ function case2(){
   document.pcr_form.total.value = 14000000
   document.pcr_form.infection.value = 100000
   document.pcr_form.sensitivity.value = 70
-  document.pcr_form.specificity.value = 95
+  document.pcr_form.specificity.value = 99
   cal()
 }
 
@@ -26,7 +26,7 @@ function case4(){
   document.pcr_form.total.value = 1000
   document.pcr_form.infection.value = 500
   document.pcr_form.sensitivity.value = 70
-  document.pcr_form.specificity.value = 95
+  document.pcr_form.specificity.value = 99
   cal()
 }
 
