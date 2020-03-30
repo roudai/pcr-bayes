@@ -56,6 +56,22 @@ function cal(){
 }
 
 function check(){
+  // PCR検査全体数が空白のとき、10000
+  if (document.pcr_form.total.value == "") {
+    document.pcr_form.total.value = 10000
+  }
+  // 感染者数が空白のとき、10000
+  if (document.pcr_form.infection.value == "") {
+    document.pcr_form.infection.value = 10000
+  }
+   // PCR感度が空白のとき、70
+  if (document.pcr_form.sensitivity.value == "") {
+    document.pcr_form.sensitivity.value = 70
+  }
+   // PCR特異度が空白のとき、99
+  if (document.pcr_form.specificity.value == "") {
+    document.pcr_form.specificity.value = 99
+  }
   // PCR検査全体数がマイナスのとき、ゼロ
   if (eval(document.pcr_form.total.value) < 0) {
     document.pcr_form.total.value = 0
